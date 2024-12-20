@@ -1,19 +1,10 @@
 server:
   port: 8080
 spring:
+  main:
+    web-application-type: REACTIVE
   application:
     name: api-gateway
-  cloud:
-    gateway:
-      routes:
-#        - id: backend-service
-#          uri: lb://backend-service
-#          predicates:
-#            - Path=/users/**
-        - id: localchat-service
-          uri: lb://localchat-service
-          predicates:
-            - Path=/api/v1/chat/local/**
 eureka:
   client:
     service-url:
